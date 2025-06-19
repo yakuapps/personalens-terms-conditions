@@ -3,337 +3,540 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms and Conditions - PersonaLens</title>
+    <title>PersonaLens - Support & Help</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            color: #333;
-            background-color: #fff;
         }
-        h1 {
-            color: #333;
-            border-bottom: 2px solid #007AFF;
-            padding-bottom: 10px;
+        
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
-        h2 {
-            color: #333;
-            margin-top: 30px;
-            border-left: 3px solid #007AFF;
-            padding-left: 15px;
+        
+        .header h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
         }
-        h3 {
-            color: #555;
-            margin-top: 20px;
+        
+        .header p {
+            color: #666;
+            font-size: 1.1em;
         }
-        .important {
-            background-color: #f0f8ff;
-            padding: 15px;
-            border-left: 4px solid #007AFF;
-            margin: 15px 0;
+        
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         }
-        .warning {
-            background-color: #fff3cd;
-            padding: 15px;
-            border-left: 4px solid #ffc107;
-            margin: 15px 0;
+        
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        .contact {
-            background-color: #f8f9fa;
+        
+        .section h3 {
+            color: #764ba2;
+            margin: 20px 0 10px 0;
+            font-size: 1.3em;
+        }
+        
+        .contact-info {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
             padding: 20px;
-            border-radius: 5px;
-            margin-top: 30px;
+            border-radius: 12px;
+            margin: 20px 0;
         }
-        ul {
-            padding-left: 20px;
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
         }
-        li {
-            margin-bottom: 5px;
+        
+        .contact-info a:hover {
+            text-decoration: underline;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
+        
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .feature-item {
+            background: #f8f9ff;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .faq-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9ff;
+            border-radius: 10px;
+            border-left: 4px solid #764ba2;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .faq-answer {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .code-block {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9em;
+            border-left: 4px solid #667eea;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        
+        .steps {
+            counter-reset: step-counter;
+        }
+        
+        .step {
+            counter-increment: step-counter;
+            position: relative;
+            padding: 15px 15px 15px 60px;
+            margin-bottom: 15px;
+            background: #f8f9ff;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .step::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #667eea;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        .download-link {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 10px 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .download-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 8px;
             margin: 15px 0;
         }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
+        
+        .success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
         }
-        th {
-            background-color: #f8f9fa;
+        
+        .privacy-highlight {
+            background: #e3f2fd;
+            border: 2px solid #2196f3;
+            color: #0d47a1;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 8px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .section {
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Terms and Conditions for PersonaLens</h1>
-    
-    <div class="important">
-        <strong>Last updated:</strong> January 15, 2025<br>
-        <strong>Effective date:</strong> January 15, 2025
+    <div class="container">
+        <div class="header">
+            <h1>🧠 PersonaLens</h1>
+            <p>AI-Powered Personality Analysis from Your Chat Conversations</p>
+        </div>
+
+        <div class="section">
+            <h2><span class="emoji">📧</span>Contact Support</h2>
+            <div class="contact-info">
+                <p><strong>Email:</strong> <a href="mailto:personalens.support@gmail.com">personalens.support@gmail.com</a></p>
+                <p><strong>Response Time:</strong> Usually within 24 hours</p>
+                <p><strong>Languages:</strong> English, Spanish, French, German, Portuguese</p>
+            </div>
+            <p>Having trouble with PersonaLens? We're here to help! Send us an email with your question and we'll get back to you as soon as possible.</p>
+        </div>
+
+        <div class="section">
+            <h2><span class="emoji">🚀</span>How to Use PersonaLens</h2>
+            <div class="steps">
+                <div class="step">
+                    <strong>Method 1: Direct Import</strong><br>
+                    Open PersonaLens → Tap "Analyze Chat" → Select your exported WhatsApp ZIP file
+                </div>
+                <div class="step">
+                    <strong>Method 2: Share Extension (Recommended)</strong><br>
+                    WhatsApp → Select chat → "Export Chat" → "Without Media" → Choose "PersonaLens" from share options
+                </div>
+                <div class="step">
+                    <strong>Choose Analysis Type</strong><br>
+                    Select "Individual Analysis" for personality insights or "Relationship Analysis" for compatibility
+                </div>
+                <div class="step">
+                    <strong>Secure Processing</strong><br>
+                    Your data is anonymized locally, then analyzed by our AI models for personality insights
+                </div>
+                <div class="step">
+                    <strong>Explore Your Results</strong><br>
+                    View your Big Five personality traits, communication style, and character matches across three detailed tabs
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="emoji">🔒</span>Privacy & Security</h2>
+            <div class="privacy-highlight">
+                <h3>How PersonaLens Protects Your Privacy:</h3>
+                <ol style="margin-top: 15px; line-height: 1.8;">
+                    <li><strong>Local Anonymization:</strong> Sensitive data is processed and anonymized on your device before any transmission</li>
+                    <li><strong>Secure Transmission:</strong> Only anonymized, non-identifiable data is sent to our AI models</li>
+                    <li><strong>No Storage:</strong> Analysis happens on-the-fly - no chat data is stored on our servers</li>
+                    <li><strong>Immediate Deletion:</strong> Anonymized data is processed and immediately discarded after analysis</li>
+                    <li><strong>Original Data Stays Local:</strong> Your actual chat messages never leave your device</li>
+                </ol>
+            </div>
+            
+            <div class="success">
+                <strong>🛡️ Triple Protection:</strong> Local anonymization + Secure transmission + No server storage = Maximum privacy protection
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="emoji">📁</span>Sample WhatsApp Export</h2>
+            <p>Need a sample file to test the app? Download our anonymized sample WhatsApp export:</p>
+            <a href="data:application/zip;base64,UEsDBAoAAAAAAIdWeFAAAAAAAAAAAAAAAAAJAAAAY2hhdC50eHSCiJ3OwMDN6lIDrBxA" download="sample_chat.zip" class="download-link">
+                📥 Download Sample Chat Export
+            </a>
+            <div class="success">
+                <strong>✅ Safe to Use:</strong> This sample contains anonymized conversation data perfect for testing PersonaLens features.
+            </div>
+
+            <h3>Sample Chat Format:</h3>
+            <div class="code-block">
+12/1/23, 10:30 AM - Alice: Hey! How was your day?
+12/1/23, 10:32 AM - Bob: Pretty good! Just finished work. What about you?
+12/1/23, 10:33 AM - Alice: Same here! Want to grab dinner tonight? 🍕
+12/1/23, 10:35 AM - Bob: Absolutely! I know a great place downtown
+12/1/23, 10:36 AM - Alice: Perfect! See you at 7? 😊
+12/1/23, 10:37 AM - Bob: It's a date! 👍
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="emoji">✨</span>App Features</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <strong>🧠 Big Five Analysis</strong><br>
+                    AI-powered personality assessment using advanced language models
+                </div>
+                <div class="feature-item">
+                    <strong>💑 Compatibility Scoring</strong><br>
+                    Multi-dimensional relationship analysis with detailed metrics
+                </div>
+                <div class="feature-item">
+                    <strong>🎨 AI Character Matching</strong><br>
+                    Personality-based fictional character matches with similarity scores
+                </div>
+                <div class="feature-item">
+                    <strong>📊 Communication Insights</strong><br>
+                    Active hours heatmap, topic analysis, and messaging patterns
+                </div>
+                <div class="feature-item">
+                    <strong>🔒 Privacy-First Architecture</strong><br>
+                    Local anonymization with secure AI processing
+                </div>
+                <div class="feature-item">
+                    <strong>📱 Share Extension</strong><br>
+                    Direct import from WhatsApp export with one tap
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="emoji">❓</span>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Is my chat data safe and private?</div>
+                <div class="faq-answer">
+                    Yes! PersonaLens uses a unique privacy-first architecture. Your original chat messages are anonymized locally on your device. Only the anonymized data is sent to our AI models for analysis. No chat data is stored on our servers - analysis happens on-the-fly and data is immediately discarded after processing.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How does the share extension work?</div>
+                <div class="faq-answer">
+                    After installing PersonaLens, you can export a WhatsApp chat and select "PersonaLens" from the share menu. This automatically imports the chat into the app for analysis - no need to manually find and select files.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What happens to my data during AI analysis?</div>
+                <div class="faq-answer">
+                    Your messages are processed locally to remove identifying information like names, phone numbers, and specific details. Only patterns, communication style, and anonymized content are sent to our AI models. The original messages never leave your device.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Which messaging apps does PersonaLens support?</div>
+                <div class="faq-answer">
+                    Currently, PersonaLens works with WhatsApp chat exports. We're working on adding support for iMessage, Telegram, and other popular messaging platforms in future updates.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How accurate is the personality analysis?</div>
+                <div class="faq-answer">
+                    PersonaLens uses advanced AI models trained on personality psychology and the scientifically-backed Big Five model (OCEAN). Our analysis considers communication patterns, language use, emotional expression, and conversation dynamics to provide meaningful personality insights.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What's the difference between free and premium features?</div>
+                <div class="faq-answer">
+                    Free version includes basic personality analysis and compatibility scoring. Premium unlocks advanced insights like predictive relationship analysis, detailed sentiment trends, comprehensive topic analysis, and unlimited AI character art generation.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Why does analysis sometimes take time?</div>
+                <div class="faq-answer">
+                    PersonaLens performs sophisticated AI analysis using advanced language models. Processing time depends on chat length and internet connection speed. Longer conversations (1000+ messages) may take 1-3 minutes to analyze completely.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Can I analyze group chats?</div>
+                <div class="faq-answer">
+                    Currently, PersonaLens works best with one-on-one conversations for the most accurate personality and compatibility analysis. Group chat analysis is planned for a future update.
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="emoji">🔧</span>Troubleshooting</h2>
+            
+            <h3>Share Extension Not Appearing</h3>
+            <div class="warning">
+                <strong>Solutions:</strong>
+                <ul style="margin-top: 10px;">
+                    <li>Make sure PersonaLens is fully installed and opened at least once</li>
+                    <li>Export chat "Without Media" for smaller file size</li>
+                    <li>If still not showing, use direct import method in the app</li>
+                    <li>Restart your device if the extension isn't visible</li>
+                </ul>
+            </div>
+
+            <h3>Analysis Takes Too Long</h3>
+            <div class="warning">
+                <strong>Possible Fixes:</strong>
+                <ul style="margin-top: 10px;">
+                    <li>Check your internet connection (needed for AI analysis)</li>
+                    <li>Try a shorter conversation first to test</li>
+                    <li>Close other apps to free up device resources</li>
+                    <li>Ensure stable WiFi or cellular connection</li>
+                </ul>
+            </div>
+
+            <h3>Import Error</h3>
+            <div class="warning">
+                <strong>Common Solutions:</strong>
+                <ul style="margin-top: 10px;">
+                    <li>Ensure the file is exported as a ZIP (not TXT)</li>
+                    <li>Export "Without Media" to reduce file size</li>
+                    <li>Try importing directly through the app instead of share extension</li>
+                    <li>Verify the chat export contains actual messages</li>
+                </ul>
+            </div>
+
+            <h3>App Crashes</h3>
+            <div class="warning">
+                <strong>If the app crashes:</strong>
+                <ul style="margin-top: 10px;">
+                    <li>Update to the latest version from the App Store</li>
+                    <li>Restart your device</li>
+                    <li>Try importing a smaller chat file</li>
+                    <li>Contact support with crash details and device model</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="emoji">🆕</span>Latest Updates</h2>
+            <h3>Version 1.0.0 - Initial Release</h3>
+            <ul>
+                <li>✅ WhatsApp share extension integration</li>
+                <li>✅ Privacy-first architecture with local anonymization</li>
+                <li>✅ AI-powered Big Five personality analysis</li>
+                <li>✅ Three-tab detailed analysis interface</li>
+                <li>✅ Friendship and relationship compatibility scoring</li>
+                <li>✅ Character matching with fictional personalities</li>
+                <li>✅ Active hours heatmap and communication insights</li>
+                <li>✅ Beautiful, shareable personality reports</li>
+            </ul>
+
+            <h3>Coming Soon</h3>
+            <ul>
+                <li>🔄 iMessage support</li>
+                <li>🔄 Group chat analysis</li>
+                <li>🔄 Telegram integration</li>
+                <li>🔄 Advanced predictive insights</li>
+                <li>🔄 More character art styles</li>
+                <li>🔄 Export to PDF functionality</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2><span class="emoji">💡</span>Tips for Best Results</h2>
+            <div class="success">
+                <ul>
+                    <li><strong>Use longer conversations:</strong> 100+ messages provide more accurate analysis</li>
+                    <li><strong>Recent chats work best:</strong> More recent conversations reflect current personality traits</li>
+                    <li><strong>One-on-one chats:</strong> Personal conversations give better insights than group chats</li>
+                    <li><strong>Natural conversations:</strong> Casual, authentic chats work better than formal exchanges</li>
+                    <li><strong>Mixed topics:</strong> Conversations covering various subjects provide richer analysis</li>
+                    <li><strong>Use share extension:</strong> Fastest way to import from WhatsApp</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="emoji">🌍</span>Privacy Policy</h2>
+            <p><strong>Local Processing:</strong> Sensitive data anonymization happens entirely on your device.</p>
+            <p><strong>Secure Transmission:</strong> Only anonymized, non-identifiable patterns are sent for AI analysis.</p>
+            <p><strong>No Data Storage:</strong> We don't store any chat data on our servers - analysis is real-time.</p>
+            <p><strong>Anonymous Analytics:</strong> We collect anonymous usage statistics to improve the app (no personal data).</p>
+            <p><strong>No Registration:</strong> PersonaLens doesn't require accounts or personal information.</p>
+            
+            <div class="privacy-highlight">
+                <strong>🔒 Our Privacy Promise:</strong> Your original chat messages never leave your device. Our AI models only see anonymized patterns and communication styles, never the actual content of your personal conversations.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="emoji">📱</span>System Requirements</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <strong>iOS</strong><br>
+                    iOS 13.0 or later<br>
+                    iPhone 6s or newer<br>
+                    iPad (6th generation) or newer
+                </div>
+                <div class="feature-item">
+                    <strong>Storage</strong><br>
+                    50MB app size<br>
+                    Additional space for analysis<br>
+                    (varies by chat size)
+                </div>
+                <div class="feature-item">
+                    <strong>Internet</strong><br>
+                    Required for AI analysis<br>
+                    WiFi or cellular connection<br>
+                    Secure encrypted transmission
+                </div>
+            </div>
+        </div>
     </div>
 
-    <h2>1. Acceptance of Terms</h2>
-    <p>By downloading, installing, or using the PersonaLens mobile application ("App"), you agree to be bound by these Terms and Conditions ("Terms"). If you do not agree to these Terms, do not use the App.</p>
-
-    <p><strong>App Information:</strong></p>
-    <ul>
-        <li><strong>App Name:</strong> PersonaLens</li>
-        <li><strong>Bundle ID:</strong> com.personalens.app</li>
-        <li><strong>Developer:</strong> PersonaLens Team</li>
-        <li><strong>Contact:</strong> yakuapps@gmail.com</li>
-    </ul>
-
-    <h2>2. Description of Service</h2>
-    <p>PersonaLens is a mobile application that analyzes WhatsApp chat conversations to provide personality insights and generate AI-powered visualizations. The service includes:</p>
-    <ul>
-        <li><strong>Individual Personality Analysis:</strong> Analysis of conversation patterns to extract personality traits</li>
-        <li><strong>AI Art Generation:</strong> Creation of personalized artwork based on personality analysis</li>
-        <li><strong>Report Generation:</strong> Comprehensive personality reports with insights and metrics</li>
-        <li><strong>Chat File Management:</strong> Storage and processing of uploaded chat files</li>
-        <li><strong>Usage Analytics:</strong> Tracking app usage to improve user experience (via Firebase Analytics)</li>
-    </ul>
-
-    <h2>3. Subscription Terms</h2>
-
-    <table>
-        <tr>
-            <th>Feature</th>
-            <th>Free Version</th>
-            <th>Pro Subscription</th>
-        </tr>
-        <tr>
-            <td>Personality Analysis</td>
-            <td>Basic analysis (up to 3 files)</td>
-            <td>Unlimited analysis</td>
-        </tr>
-        <tr>
-            <td>AI Art Generation</td>
-            <td>Not available</td>
-            <td>Unlimited with multiple styles</td>
-        </tr>
-        <tr>
-            <td>Advanced Features</td>
-            <td>Limited</td>
-            <td>Full access</td>
-        </tr>
-        <tr>
-            <td>File Uploads</td>
-            <td>Up to 3 files</td>
-            <td>Up to 10 concurrent uploads</td>
-        </tr>
-    </table>
-
-    <h3>3.1 Subscription Management</h3>
-    <ul>
-        <li><strong>Billing:</strong> Subscriptions are processed through Apple App Store or Google Play Store</li>
-        <li><strong>Auto-Renewal:</strong> Subscriptions automatically renew unless cancelled at least 24 hours before the current period ends</li>
-        <li><strong>Cancellation:</strong> You can cancel your subscription anytime through your App Store or Play Store account settings</li>
-        <li><strong>Refunds:</strong> Refund requests are handled according to Apple's and Google's respective refund policies</li>
-    </ul>
-
-    <h3>3.2 Pro Features Access</h3>
-    <ul>
-        <li>Pro features are available only during active subscription periods</li>
-        <li>Previously generated content remains accessible even after subscription cancellation</li>
-        <li>Subscription benefits are tied to your Apple ID or Google Play account</li>
-    </ul>
-
-    <h2>4. Data Collection and Analytics</h2>
-
-    <h3>4.1 Firebase Analytics</h3>
-    <p>We use Firebase Analytics (provided by Google) to understand how users interact with our app and to improve our services. By using PersonaLens, you consent to:</p>
-    <ul>
-        <li><strong>Usage Tracking:</strong> Collection of data about how you use the app, which features you access, and your navigation patterns</li>
-        <li><strong>Performance Monitoring:</strong> Collection of app performance data, crash reports, and error logs</li>
-        <li><strong>Device Information:</strong> Collection of basic device information such as device type, operating system version, and app version</li>
-        <li><strong>Installation Tracking:</strong> Tracking of app installations, first launches, and update events</li>
-        <li><strong>Subscription Events:</strong> Tracking of subscription-related events for analytics purposes</li>
-    </ul>
-
-    <h3>4.2 Analytics Opt-Out</h3>
-    <ul>
-        <li>You can opt out of analytics tracking through your device's privacy settings</li>
-        <li>Opting out will not affect core app functionality</li>
-        <li>Some app improvement features may be limited without analytics data</li>
-    </ul>
-
-    <h2>5. AI Analysis Disclaimer</h2>
-
-    <div class="warning">
-        <strong>Important Disclaimer:</strong> PersonaLens provides personality analysis for entertainment and insight purposes only. Results should not be considered as professional psychological advice or diagnosis.
-    </div>
-
-    <h3>5.1 Analysis Accuracy</h3>
-    <ul>
-        <li><strong>Entertainment Purpose:</strong> Our AI analysis is designed for entertainment and personal insight</li>
-        <li><strong>Not Medical Advice:</strong> Results are not intended to diagnose, treat, or replace professional psychological consultation</li>
-        <li><strong>Accuracy Limitations:</strong> AI analysis may not be 100% accurate and should be interpreted accordingly</li>
-        <li><strong>Individual Variation:</strong> Results may vary based on conversation content, length, and context</li>
-    </ul>
-
-    <h3>5.2 Professional Advice</h3>
-    <p>If you need professional psychological assessment or advice, please consult with qualified mental health professionals. PersonaLens is not a substitute for professional psychological services.</p>
-
-    <h2>6. Content Ownership and Usage Rights</h2>
-
-    <h3>6.1 Your Content</h3>
-    <ul>
-        <li><strong>Ownership:</strong> You retain ownership of all chat files and personal data you upload</li>
-        <li><strong>Processing Rights:</strong> By using the App, you grant us permission to process your chat data for analysis purposes</li>
-        <li><strong>Privacy:</strong> Your original chat files remain on your device and are processed according to our Privacy Policy</li>
-    </ul>
-
-    <h3>6.2 Generated Content</h3>
-    <ul>
-        <li><strong>Reports:</strong> You own the personality reports generated from your data</li>
-        <li><strong>AI Artwork:</strong> You have usage rights to AI-generated images created from your analysis</li>
-        <li><strong>Export Rights:</strong> You can export, save, and share your generated content</li>
-        <li><strong>Commercial Use:</strong> You may use generated content for personal and commercial purposes</li>
-    </ul>
-
-    <h3>6.3 App Content</h3>
-    <ul>
-        <li>The PersonaLens app, including its design, features, and underlying technology, remains our intellectual property</li>
-        <li>You may not reverse engineer, copy, or redistribute the app</li>
-    </ul>
-
-    <h2>7. Acceptable Use Policy</h2>
-
-    <h3>7.1 Permitted Use</h3>
-    <ul>
-        <li>Analyze your own WhatsApp conversations</li>
-        <li>Analyze conversations with explicit consent from all participants</li>
-        <li>Use the service for personal insight and entertainment</li>
-        <li>Export and share your own generated reports and artwork</li>
-    </ul>
-
-    <h3>7.2 Prohibited Use</h3>
-    <ul>
-        <li><strong>Unauthorized Content:</strong> Do not upload conversations without permission from all participants</li>
-        <li><strong>Illegal Content:</strong> Do not upload content that violates laws or regulations</li>
-        <li><strong>Harmful Content:</strong> Do not upload content containing harassment, threats, or hate speech</li>
-        <li><strong>Spam or Abuse:</strong> Do not use the service to spam or abuse others</li>
-        <li><strong>System Abuse:</strong> Do not attempt to overload or hack our systems</li>
-        <li><strong>Analytics Manipulation:</strong> Do not attempt to manipulate or interfere with analytics tracking</li>
-    </ul>
-
-    <h2>8. Service Limitations</h2>
-
-    <h3>8.1 Technical Limitations</h3>
-    <ul>
-        <li><strong>File Formats:</strong> Only WhatsApp chat export files (.txt, .zip) are supported</li>
-        <li><strong>File Size:</strong> Maximum file size of 10MB per upload</li>
-        <li><strong>Processing Time:</strong> Analysis may take several minutes to complete</li>
-        <li><strong>Internet Required:</strong> Active internet connection required for analysis processing and analytics</li>
-    </ul>
-
-    <h3>8.2 Service Availability</h3>
-    <ul>
-        <li><strong>Best Effort:</strong> We strive to maintain 99% service availability but cannot guarantee uninterrupted service</li>
-        <li><strong>Maintenance:</strong> Scheduled maintenance may temporarily interrupt service</li>
-        <li><strong>Server Issues:</strong> External server issues may affect processing times</li>
-        <li><strong>Updates:</strong> App updates may temporarily affect functionality</li>
-        <li><strong>Third-Party Dependencies:</strong> Service depends on third-party providers (AWS, Firebase, RevenueCat)</li>
-    </ul>
-
-    <h2>9. Privacy and Data Protection</h2>
-    <p>Your privacy is important to us. Our data collection, processing, and protection practices are detailed in our <strong>Privacy Policy</strong>, which is incorporated into these Terms by reference. By using PersonaLens, you also agree to our Privacy Policy.</p>
-
-    <div class="important">
-        <strong>Privacy Highlights:</strong>
-        <ul>
-            <li>Original chat files never leave your device</li>
-            <li>Data is anonymized before any external processing</li>
-            <li>Firebase Analytics collects usage data to improve the app</li>
-            <li>You have complete control over your data</li>
-            <li>All data can be deleted at any time</li>
-        </ul>
-    </div>
-
-    <h2>10. Third-Party Services</h2>
-    <p>PersonaLens integrates with the following third-party services:</p>
-    <ul>
-        <li><strong>Firebase Analytics (Google):</strong> App usage analytics and performance monitoring</li>
-        <li><strong>AWS:</strong> AI processing and analysis services</li>
-        <li><strong>RevenueCat:</strong> Subscription management and payment processing</li>
-        <li><strong>Apple App Store / Google Play Store:</strong> App distribution and payment processing</li>
-    </ul>
-    <p>Use of these services is subject to their respective terms of service and privacy policies.</p>
-
-    <h2>11. Account Termination</h2>
-
-    <h3>11.1 Termination by You</h3>
-    <ul>
-        <li>You may stop using the App at any time</li>
-        <li>Delete the app to remove all local data</li>
-        <li>Cancel subscriptions through your App Store or Play Store account</li>
-        <li>Contact us for complete data deletion including analytics data</li>
-    </ul>
-
-    <h3>11.2 Termination by Us</h3>
-    <ul>
-        <li>We may terminate access for violations of these Terms</li>
-        <li>We may discontinue the service with reasonable notice</li>
-        <li>Account violations may result in immediate suspension</li>
-    </ul>
-
-    <h2>12. Limitation of Liability</h2>
-
-    <div class="warning">
-        <strong>Legal Disclaimer:</strong> PersonaLens is provided "as is" without warranties of any kind.
-    </div>
-
-    <h3>12.1 Service Disclaimers</h3>
-    <ul>
-        <li><strong>No Warranties:</strong> We provide the service without express or implied warranties</li>
-        <li><strong>Analysis Accuracy:</strong> We do not guarantee the accuracy of personality analysis results</li>
-        <li><strong>Service Availability:</strong> We do not guarantee uninterrupted or error-free service</li>
-        <li><strong>Data Security:</strong> While we implement security measures, no system is 100% secure</li>
-        <li><strong>Third-Party Services:</strong> We are not responsible for issues with third-party services</li>
-    </ul>
-
-    <h3>12.2 Liability Limits</h3>
-    <ul>
-        <li>Our liability is limited to the amount you paid for the service (if any)</li>
-        <li>We are not liable for indirect, incidental, or consequential damages</li>
-        <li>We are not responsible for decisions made based on analysis results</li>
-        <li>We are not liable for any issues arising from third-party services</li>
-    </ul>
-
-    <h2>13. Changes to Terms</h2>
-    <p>We may update these Terms from time to time. We will notify you of material changes by:</p>
-    <ul>
-        <li>Posting the updated Terms within the app</li>
-        <li>Updating the "Last updated" date</li>
-        <li>Providing in-app notifications for significant changes</li>
-        <li>Requiring acceptance of new terms before continued use</li>
-    </ul>
-
-    <p>Continued use of the App after changes constitutes acceptance of the new Terms.</p>
-
-    <h2>14. Governing Law</h2>
-    <p>These Terms are governed by the laws of the jurisdiction where PersonaLens is operated. Any disputes will be resolved in the appropriate courts of that jurisdiction.</p>
-
-    <h2>15. Severability</h2>
-    <p>If any provision of these Terms is found to be unenforceable, the remaining provisions will continue to be valid and enforceable.</p>
-
-    <div class="contact">
-        <h2>16. Contact Information</h2>
-        <p>If you have any questions about these Terms and Conditions, please contact us:</p>
-        <ul>
-            <li><strong>Email:</strong> yakuapps@gmail.com</li>
-            <li><strong>App Support:</strong> Use the "Contact Us" feature within the PersonaLens app</li>
-            <li><strong>Subject Line:</strong> Include "Terms and Conditions" in your email subject</li>
-            <li><strong>Response Time:</strong> We aim to respond to all inquiries within 48 hours</li>
-        </ul>
-    </div>
-
-    <div class="important">
-        <strong>By using PersonaLens, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.</strong>
+    <div class="footer">
+        <p>© 2024 PersonaLens. All rights reserved.</p>
+        <p>Built with privacy and insights in mind 🧠✨</p>
     </div>
 </body>
 </html>
